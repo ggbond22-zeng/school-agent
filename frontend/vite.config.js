@@ -5,10 +5,11 @@ import vue from '@vitejs/plugin-vue'
 import vueDevTools from 'vite-plugin-vue-devtools'
 
 // https://vite.dev/config/
-// command === 'build' 时是生产构建：GitHub Pages 部署在 /lab-agent/ 子路径下，资源引用必须带这个前缀
+// command === 'build' 时是生产构建：GitHub Pages 部署在 /school-agent/ 子路径下，资源引用必须带这个前缀
+// ⚠️ 仓库改名后这里必须同步修改，否则线上所有 JS/CSS 会 404，页面白屏
 // 本地 dev 服务器保持根路径 '/' 不变，开发体验不受影响
 export default defineConfig(({ command }) => ({
-  base: command === 'build' ? '/lab-agent/' : '/',
+  base: command === 'build' ? '/school-agent/' : '/',
   plugins: [vue(), vueDevTools()],
   resolve: {
     alias: {
